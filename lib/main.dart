@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: BusBuddyRoutes.routes,
-      initialRoute: BusBuddyRoutes.parentsHomepage,
+      initialRoute: BusBuddyRoutes.driverProfilePage,
     );
   }
 }
