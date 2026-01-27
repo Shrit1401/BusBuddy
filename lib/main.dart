@@ -1,13 +1,17 @@
+import 'package:busbuddy/firebase_options.dart';
 import 'package:busbuddy/utils/constants/colour_constants.dart';
 import 'package:busbuddy/utils/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(const BusBuddyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BusBuddyApp extends StatelessWidget {
+  const BusBuddyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: BusBuddyRoutes.routes,
-      initialRoute: BusBuddyRoutes.driverProfilePage,
+      initialRoute: BusBuddyRoutes.parentLogin,
     );
   }
 }

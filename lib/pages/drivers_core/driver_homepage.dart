@@ -1,3 +1,4 @@
+import 'package:busbuddy/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:busbuddy/utils/constants/colour_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -62,16 +63,21 @@ class _DriverHomepageState extends State<DriverHomepage> {
               letterSpacing: -0.5,
             ),
           ),
-          Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: [Colors.teal.shade300, Colors.green.shade300],
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, BusBuddyRoutes.driverProfilePage);
+            },
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: [Colors.teal.shade300, Colors.green.shade300],
+                ),
               ),
+              child: Icon(Icons.person_rounded, color: Colors.white, size: 24),
             ),
-            child: Icon(Icons.person_rounded, color: Colors.white, size: 24),
           ),
         ],
       ),
